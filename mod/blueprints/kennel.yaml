@@ -1,0 +1,476 @@
+# The world KennelRig shows the Kennel in (--backrooms-kennel).
+#
+# One enclosed ranch room cut into solid Obsidian: 14 x 6 = 84 cells of Oxygen (a Stable needs
+# 12..96), floor at y 4. The Kennel (3x3, origin = bottom-centre cell) stands at x 11 so it covers
+# x 10..12, y 4..6; the Grooming Station (2x3) at x 18 covers x 18..19. Hatches and the rancher are
+# spawned by the rig (the schema has no critters). The whole room is drywalled, as a player would:
+# the Kennel is an OnBackWall building, and the room behind the wall takes the drywall's texture.
+# Nothing here is simulated against for energy or mass, so no jacket.
+name: Kennel
+
+canvas:
+  width: 40
+  height: 22
+  background: Vacuum
+  backgroundTemperature: 300.0
+  border: Unobtanium
+  borderThickness: 1
+  zone: Sandstone
+  startX: 15
+  startY: 7
+
+regions:
+  - name: block          # everything inside the border, solid Obsidian
+    x: 1
+    y: 1
+    w: 38
+    h: 20
+  - name: room
+    x: 8
+    y: 4
+    w: 14
+    h: 6
+
+fills:
+  - region: block
+    element: Obsidian
+    mass: 1840.0
+    temperature: 300.0
+  - region: room
+    element: Oxygen
+    mass: 1.2
+    temperature: 300.0
+
+buildings:
+  # Drywall behind every cell of the room, as a player would wall it: the Kennel
+  # is an OnBackWall building, and the room behind the wall takes the drywall's texture.
+  - id: ExteriorWall
+    x: 8
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 4
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 8
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 5
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 8
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 6
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 8
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 7
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 8
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 8
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 8
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 9
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 10
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 11
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 12
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 13
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 14
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 15
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 16
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 17
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 18
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 19
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 20
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: ExteriorWall
+    x: 21
+    y: 9
+    element: SandStone
+    temperature: 300.0
+  - id: BackroomsKennel
+    x: 11
+    y: 4
+    element: Steel
+    temperature: 300.0
+  - id: RanchStation
+    x: 18
+    y: 4
+    element: Steel
+    temperature: 300.0

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Backrooms</RootNamespace>
+    <AssemblyName>Backrooms</AssemblyName>
+    <Version>0.1.33</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Explicit list, not globbing (EnableDefaultCompileItems is false in
+         Directory.Build.props). A new .cs file silently does not build until it is added here. -->
+    <Compile Include="Mod.cs" />
+    <Compile Include="Patches.cs" />
+    <Compile Include="KennelConfig.cs" />
+    <Compile Include="Kennel.cs" />
+    <None Include="mod.yaml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="mod_info.yaml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="blueprints\**\*.yaml" CopyToOutputDirectory="PreserveNewest" />
+    <!-- kanim assets: KMod.Mod.LoadAnimation registers each anim/*/<Name>/ as "<Name>_kanim",
+         so the directory structure has to survive into the output (see mod1's csproj). -->
+    <None Include="anim\**\*" CopyToOutputDirectory="PreserveNewest">
+      <Link>anim\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+  <!-- The mod itself needs only OniFramework.Library, referenced for every flagship project by
+       Directory.Build.props (Private=false). The dev rigs (KENNEL, BENCHV, BENCHK) derive from
+       RigHarness and use BlueprintRig, which live in OniFramework, the SimDLL half of the API. They
+       build only when BackroomsRigs names OniFramework.csproj on the command line
+       (-p:BackroomsRigs=<path>/OniFramework/OniFramework.csproj), which also defines BACKROOMS_RIGS
+       for Mod.cs and Patches.cs. The released mod is built without it and loads with the library
+       alone. -->
+  <PropertyGroup Condition="'$(BackroomsRigs)' != ''">
+    <DefineConstants>$(DefineConstants);BACKROOMS_RIGS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(BackroomsRigs)' != ''">
+    <Compile Include="KennelRig.cs" />
+    <Compile Include="KennelBenchRig.cs" />
+    <ProjectReference Include="$(BackroomsRigs)">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
