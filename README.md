@@ -46,7 +46,7 @@ The Kennel is the first use of the Backrooms technique, not the whole of it. The
 planned to take every critter type, not only hatches. The technique is intended for larger additions
 too: full-room backrooms, with a new view that moves between layers and cuts a backroom into slices
 one tile deep, so that duplicants can walk through it and build inside it. More uses are planned
-beyond that. These are plans, not promises.
+beyond that like caves that can be entered and explored. These are plans, not promises.
 
 ## Requirements
 
